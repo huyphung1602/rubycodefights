@@ -9,7 +9,7 @@ def mergeSort(array)
   right_side = mergeSort array.slice(mid, array.count - mid)
 
   # Compare and sort from 2 side
-  array = Array.new
+  result_array = Array.new
   left_index = 0
   right_index = 0
 
@@ -20,26 +20,26 @@ def mergeSort(array)
     # Compare left and right, choose the smaller number
 
     if left_number <= right_number
-      array << left_number
+      result_array << left_number
       left_index += 1
     else
-      array << right_number
+      result_array << right_number
       right_index += 1
     end
   end
 
-  # There will be one array remain (left_side or right_side)
+  # There will be one result_array remain (left_side or right_side)
   while left_index < left_side.count
-    array << left_side[left_index]
+    result_array << left_side[left_index]
     left_index += 1
   end
 
   while right_index < right_side.count
-    array << right_side[right_index]
+    result_array << right_side[right_index]
     right_index += 1
   end
 
-  return array
+  return result_array
 end
 
 # Test

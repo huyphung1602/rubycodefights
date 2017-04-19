@@ -6,17 +6,21 @@ def binarySearch(array, value, from=0, to=nil)
 
   mid = (from + to) / 2
 
+  if to == from && value != array[mid]
+    return "Not found"
+  end
+
   if value < array[mid]
-    binarySearch array, value, from, mid - 1
+    binarySearch(array, value, from, mid - 1)
   elsif value > array[mid]
-    binarySearch array, value, mid + 1, to
+    binarySearch(array, value, mid + 1, to)
   else
     mid
   end
 end
 
 # Testcase
-a = 15.times.map { rand(1000) }
+a = 15.times.map { rand(100) }
 a = a.sort
 print a
 puts
@@ -44,3 +48,8 @@ if position == position_2
 else
   puts "Error fail on searching #{compare_2}, position: #{position}"
 end
+
+# Search 10
+puts "Search 10"
+position = binarySearch a, 10
+puts "Position: #{position}"
