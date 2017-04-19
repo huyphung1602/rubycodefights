@@ -42,14 +42,8 @@ def mergeSort(array)
   return array
 end
 
-# Testcase
-b = (99..120).to_a
-b = b.shuffle
-print b
-puts
-
-# Mergesort operates in new array
-# So we need to reassign
-b = mergeSort b
-puts "mergeSort"
-print b
+# Test
+100.times do
+  test_a = 30.times.map { rand(1000) }
+  raise "You're wrong on ms" unless test_a.sort == mergeSort(test_a)
+end
