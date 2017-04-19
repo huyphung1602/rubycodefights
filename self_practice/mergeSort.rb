@@ -41,3 +41,14 @@ def mergeSort(array)
 
   return array
 end
+
+# Testcase
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].shuffle
+print b
+puts
+
+# Mergesort operates in new array
+# So we need to reassign
+b = mergeSort b
+puts "mergeSort"
+print b
